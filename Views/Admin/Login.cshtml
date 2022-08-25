@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/login-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7 user-scalable=no">
+    <link rel="icon" href="/img/logo.png">
+    <title>Whitely - Login</title>
+</head>
+<body>
+    <header class="header__wrapper">
+        <div class="header">
+            <span class="logo"><a href="/">Whitely</a></span>
+            <nav class="navbar">
+                <div class="item"><a href="/">Home</a></div>
+                <div class="item"><a href="#">Privacy</a></div>
+                <div class="item"><a href="#">About Us</a></div>
+                <div class="item"><a asp-action="Offers" asp-controller="Home">Search</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="title">Login</div>
+            @*            <div class="danger" >
+                    <div asp-validation-summary="ModelOnly" asp-validation-for="UserName"></div>
+                    <div asp-validation-summary="ModelOnly" asp-validation-for="Password"></div>
+                </div>*@
+            <form class="login-form" action="/login?ReturnUrl=@System.Net.WebUtility.UrlEncode(returnUrl)" method="post">
+                <div class="login">
+                    <label for="login">Login:</label>
+                    <input name="login">
+                </div> <br>
+
+                <div class="password">
+                    <label for="password">Password:</label>
+                    <input name="password" type="password">
+                </div>
+                <input class="login-btn" type="submit" value="Login">
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer__wrapper">
+        <div class="footer">
+            <div class="logo"><a href="/">Whitely</a></div>
+            <div class="copyright">Copyright Whitely © 2007-2022. All rights reserved</div>
+        </div>
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/c11c9940be.js" crossorigin="anonymous"></script>
+</body>
+</html>

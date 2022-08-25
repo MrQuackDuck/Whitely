@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7 user-scalable=no">
+    <link rel="icon" href="~/img/logo.png">
+    <title>@ViewData["Title"] - Whitely</title>
+    <link rel="stylesheet" href="~/style/style.css">
+</head>
+<body>
+    <header class="header__wrapper">
+        <div class="header">
+            <span class="logo"><a href="/">Whitely</a></span>
+            <nav class="navbar">
+                <div class="item"><a href="/">Home</a></div>
+                <div class="item"><a href="#">Privacy</a></div>
+                <div class="item"><a href="#">About Us</a></div>
+                <div class="item"><a asp-action="Offers" asp-controller="Home">Search</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer__wrapper">
+        <div class="footer">
+            <div class="logo"><a href="/">Whitely</a></div>
+            <div class="copyright">Copyright Whitely © 2007-2022. All rights reserved</div>
+        </div>
+    </footer>
+</body>
+</html>

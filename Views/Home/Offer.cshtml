@@ -1,0 +1,107 @@
+﻿@using Whitely.Domain.Models;
+@using Whitely.Domain;
+@model OfferResponse
+
+@{
+    Layout = null;
+
+    int count;
+    if (Model.OffersResponse_.Count <= 3)
+    {
+        count = Model.OffersResponse_.Count;
+    }
+    else
+    {
+        count = 3;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/style/style.css">
+    <link rel="stylesheet" href="~/style/offer-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7 user-scalable=no">
+    <link rel="icon" href="~/img/logo.png">
+    <title>Whitely - Offer</title>
+</head>
+<body>
+    <header class="header__wrapper">
+        <div class="header">
+            <span class="logo"><a href="/">Whitely</a></span>
+            <nav class="navbar">
+                <div class="item"><a href="/">Home</a></div>
+                <div class="item"><a href="#">Privacy</a></div>
+                <div class="item"><a href="#">About Us</a></div>
+                <div class="item"><a asp-action="Offers">Search</a></div>
+            </nav>
+        </div>
+    </header>
+    <div class="banner__wrapper">
+    </div>
+    <main>
+        <div class="scaled-image-background" onclick="displayOff()">
+            <img class="scaled-article-image" src="~/img/@(Model.OfferResponse_.Id).jpg" alt="">
+        </div>
+        <section class="article-data">
+            <div class="image-and-details">
+                <section class="image-section">
+                    <img onclick="scale()" src="~/img/@(Model.OfferResponse_.Id).jpg" alt="">
+                </section>
+                <section class="details-section">
+                    <div class="title">@Model.OfferResponse_.Title</div>
+                    <div class="date">Date: @Model.OfferResponse_.DateAdded</div>
+                    <div class="type">Type: @Model.OfferResponse_.Type</div>
+                    <div class="area">Area: @Model.OfferResponse_.Area m²</div>
+                    <div class="rent-price">Rent: @Model.OfferResponse_.RentPrice USD / m²</div>
+                    <div class="buy-price">Buy: @Model.OfferResponse_.BuyPrice USD / m²</div>
+                </section>
+            </div>
+            <section class="description-section">
+                <div class="title">Description</div>
+                <hr>
+                <div class="text">@Model.OfferResponse_.Text</div>
+            </section>
+        </section>
+
+        <section class="offers-section">
+            <div class="article-container">
+                @for (int i = 0; i < count; i++)
+                {
+                    <article>
+                        <a class="article-img" style="background-image: url('/img/@(Model.OffersResponse_[i].Id).jpg');" href="@Model.OffersResponse_[i].Id"></a>
+                        <div class="article-wrapper">
+                            <a href="@Model.OffersResponse_[i].Id" class="article-title">@Model.OffersResponse_[i].Title</a>
+                            <div class="article-date">Date: @Model.OffersResponse_[i].DateAdded</div>
+                            <div class="article-text">@(Model.OffersResponse_[i].Text)...</div>
+                            <div class="details">
+                                <div class="article-price">
+                                    Rent: @Model.OffersResponse_[i].RentPrice USD / m² <br>
+                                    Buy: @Model.OffersResponse_[i].BuyPrice USD / m²
+                                </div>
+                                <div class="type-and-id">
+                                    <div class="article-type">Type: @Model.OffersResponse_[i].Type</div>
+                                    <div class="article-id">ID: #@Model.OffersResponse_[i].Id</div>
+                                    <div class="article-type">Area: @Model.OffersResponse_[i].Area m²</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer__wrapper">
+        <div class="footer">
+            <div class="logo"><a href="/">Whitely</a></div>
+            <div class="copyright">Copyright Whitely © 2007-2022. All rights reserved</div>
+        </div>
+    </footer>
+
+    <script src="/script/script-offer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿@using Whitely.Domain.Models
+@model List<RealProperty>
+@{
+    ViewData["Title"] = "Home Page";
+    int count;
+    if (Model.Count < 6)
+    {
+        count = Model.Count;
+    }
+    else
+    {
+        count = 6;
+    }
+}
+
+
+<div class="banner__wrapper">
+    <div class="banner">
+        <div class="main-title">
+            Rent only quality real estate
+        </div>
+        <div class="sub-title">
+            Whitely.com will help you to choose  perfect real estate. We can offer large warehouses,
+            beautiful offices and more!..
+        </div>
+        <a asp-action="Offers" class="btn">Find now</a>
+    </div>
+</div>
+
+<section class="offers-section">
+    <div class="title">See our last offers:</div>
+    <hr class="underline">
+    <div class="article-container">
+        @if (Model.Count != 0)
+        {
+            @for (int i = 0; i < count; i++)
+            {
+                <article>
+                    <a class="article-img" style="background-image: url('img/@(Model[i].Id).jpg');" href="Home/Offer/@Model[i].Id"></a>
+                    <div class="article-wrapper">
+                        <a href="Home/Offer/@Model[i].Id" class="article-title">@Model[i].Title</a>
+                        <div class="article-date">Date: @Model[i].DateAdded</div>
+                        <div class="article-text">@Model[i].Text</div>
+                        <div class="details">
+                            <div class="article-price">
+                                Rent: @Model[i].RentPrice USD / m² <br>
+                                Buy: @Model[i].BuyPrice USD / m²
+                            </div>
+                            <div class="type-and-id">
+                                <div class="article-type">Type: @Model[i].Type</div>
+                                <div class="article-id">ID: #@Model[i].Id</div>
+                                <div class="article-type">Area: @Model[i].Area m²</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            }
+        }
+    </div>
+    <a class="btn" asp-action="Offers">See more...</a>
+</section>
+
+<section class="split-section">
+    <div class="text-section">
+        <div class="title">
+            Blazing fast service.
+        </div>
+        <div class="text">
+            We do our work really fast so you will not even have time to blink an eye, as you will already have real estate
+        </div>
+    </div>
+    <div class="image-section" style="
+            background-image: url('img/fire.png');"></div>
+</section>
+
+<section class="split-section">
+    <div class="text-section">
+        <div class="title">
+            Low prices
+        </div>
+        <div class="text">
+            All of our offers have minimal cost without fees
+            etc.
+        </div>
+    </div>
+    <div class="image-section" style="background-image: url('img/leaf.png');"></div>
+</section>

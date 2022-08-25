@@ -1,0 +1,94 @@
+﻿@using Whitely.Domain.Models
+@model RealProperty
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/admin-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7 user-scalable=no">
+    <link rel="icon" href="/img/logo.png">
+    <title>Whitely - Admin panel</title>
+</head>
+<body>
+    <header class="header__wrapper">
+        <div class="header">
+            <span class="logo"><a href="/">Whitely</a></span>
+            <nav class="navbar">
+                <div class="item"><a href="/">Home</a></div>
+                <div class="item"><a href="#">Privacy</a></div>
+                <div class="item"><a href="#">About Us</a></div>
+                <div class="item"><a href="alloffers.html">Search</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="control-panel">
+            <div class="add-entry active" data-tab-content>
+                <div class="tab-title">Edit entry</div>
+                <form enctype="multipart/form-data" asp-action="EditRealProperty">
+                    <input type="text" name="id" value="@Model.Id" style="display: none" />
+                    <div class="article-title">
+                        <label for="text">Title: </label>
+                        <input type="text" name="title" value="@Model.Title">
+                    </div>
+
+                    <div class="article-type">
+                        <label for="type">Type: </label>
+                        <select name="type" id="type-select">
+                            <option value="@Model.Type">@Model.Type</option>
+                            <option value="warehouse">Warehouse</option>
+                            <option value="office">Office</option>
+                            <option value="carwash">Car Wash</option>
+                            <option value="garage">Garage</option>
+                        </select>
+                    </div>
+
+                    <div class="article-text">
+                        <label for="text">Text: </label>
+                        <textarea name="text" cols="30" rows="4">@Model.Text</textarea>
+                    </div>
+
+                    <div class="article-rent">
+                        <label for="text">Rent: </label>
+                        <input name="rent" type="text" value="@Model.RentPrice">$
+                    </div>
+
+                    <div class="article-buy">
+                        <label for="text">Buy: </label>
+                        <input name="buy" type="text" value="@Model.BuyPrice">$
+                    </div>
+
+                    <div class="article-buy">
+                        <label for="text">Area: </label>
+                        <input name="area" type="text" value="@Model.Area">m²
+                    </div>
+
+                    <div class="article-buy">
+                        <label for="text">Image: </label>
+                        <input name="image" type="file" accept="image/png">
+                    </div>
+
+                    <input class="btn" value="Submit" type="submit" />
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer__wrapper">
+        <div class="footer">
+            <div class="logo"><a href="/">Whitely</a></div>
+            <div class="copyright">Copyright Whitely © 2007-2022. All rights reserved</div>
+        </div>
+    </footer>
+
+    <script src="/script/script-admin.js"></script>
+</body>
+</html>

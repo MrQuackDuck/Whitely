@@ -1,0 +1,174 @@
+.active {
+    display: flex !important;
+}
+
+.scaled-image-background {
+    display: none;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    background: rgba(0, 0, 0, .7)
+}
+
+.scaled-article-image {
+    width: 70%;
+    max-height: 100%;
+    cursor: zoom-out;
+}
+
+.banner__wrapper {
+    height: 100px !important;
+    min-height: unset;
+}
+
+main {
+}
+
+main .offers-section {
+    width: 70%;
+    background-color: #282828;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.article-data {
+    height: 700px;
+    width: 65%;
+    max-width: 1500px;
+
+    overflow: visible;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    overflow: visible;
+}
+
+.article-data section {
+    border: 2px solid #C2C2C2;
+    background-color: white;
+}
+
+.article-data .image-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+.article-data .image-section img {
+    display: block;
+    width: 100%;
+    cursor: zoom-in;
+}
+
+.article-data .details-section {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-data .image-and-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    height: 50%;
+}
+
+.article-data .details-section .title {
+    margin: 15px 30px;
+    margin-bottom: 0px;
+    color: black;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.article-data .details-section .date {
+    margin: 6px 30px;
+    color: #626262;
+    font-family: 'Roboto';
+    font-size: 14px;
+}
+
+.article-data .details-section .type {
+    margin: 6px 30px;
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.article-data .details-section .area {
+    margin: 0px 30px;
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.article-data .details-section .rent-price {
+    margin: 0px 30px;
+    margin-top: 10px;
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.article-data .details-section .buy-price {
+    margin: 0px 30px;
+    color: #000000;
+    font-family: 'Roboto';
+    font-size: 18px;
+}
+
+.article-data .description-section {
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+}
+
+.article-data .description-section .title {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Roboto';
+}
+
+.article-data .description-section hr {
+    width: 40%;
+}
+
+.article-data .description-section .text {
+    font-family: 'Roboto';
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+
+
+@media (max-width: 1200px) {
+    .article-data {
+        height: 100%;
+    }
+
+    .article-data .image-and-details {
+        flex-wrap: wrap;
+    }
+
+    .article-data .details-section {
+        height: 200px;
+    }
+
+    .article-data .description-section {
+        min-height: 300px;
+    }
+
+    .article-data .image-and-details .image-section {
+        width: 100%;
+    }
+}

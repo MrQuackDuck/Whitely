@@ -1,0 +1,538 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+html {
+    height: 100%
+}
+
+body {
+    line-height: 1
+}
+
+ol, ul {
+    list-style: none
+}
+
+blockquote, q {
+    quotes: none
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url("/fonts/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url("/fonts/centurygothic.ttf");
+}
+
+@font-face {
+    font-family: 'Font Awesome';
+    src: url("/fonts/font-awesome.ttf");
+}
+
+@font-face {
+    font-family: 'InriaSerif';
+    font-style: normal;
+    src: url("/fonts/InriaSerif-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'InriaSerif';
+    font-style: italic;
+    src: url("/fonts/InriaSerif-Italic.ttf");
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url("/fonts/Nunito-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url("/fonts/FiraSans-Regular.ttf");
+}
+
+::selection {
+    color: black;
+    background-color: rgb(0 167 241);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #EDEDED;
+}
+
+main {
+}
+
+.header__wrapper {
+    position: absolute;
+    width: 80%;
+    padding: 0px 10%;
+}
+
+    .header__wrapper .header {
+        height: 100px;
+        overflow: hidden;
+    }
+
+        .header__wrapper .header .logo {
+            font-size: 40px;
+            font-family: 'Century Gothic';
+            line-height: 100px;
+        }
+
+            .header__wrapper .header .logo a {
+                color: white;
+                text-decoration: none;
+            }
+
+        .header__wrapper .header .navbar {
+            display: block;
+            float: right;
+        }
+
+            .header__wrapper .header .navbar .item {
+                margin-left: 20px;
+                line-height: 100px;
+                display: inline-block;
+            }
+
+                .header__wrapper .header .navbar .item a {
+                    color: white;
+                    font-family: 'Nunito';
+                    text-decoration: none;
+                    font-size: 22px;
+                }
+
+                    .header__wrapper .header .navbar .item a:hover {
+                        text-decoration: underline;
+                        transition-duration: 0.5s;
+                        color: rgb(218, 218, 218);
+                    }
+
+.banner__wrapper {
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+    .banner__wrapper .banner {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 500px;
+    }
+
+    .banner__wrapper .main-title {
+        margin-top: 100px;
+        color: white;
+        font-family: 'Fira Sans';
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .banner__wrapper .sub-title {
+        padding-top: 27px;
+        color: #BFC5C9;
+        font-family: 'Roboto';
+        font-style: italic;
+        font-size: 18px;
+        text-align: center;
+        max-width: 60%;
+    }
+
+    .banner__wrapper .btn {
+        font-family: 'Roboto';
+        text-align: center;
+        margin-top: 60px;
+        font-size: 24px;
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 0px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border: none;
+    }
+
+        .banner__wrapper .btn:hover {
+            color: black;
+            background-color: white;
+            transition-duration: 0.2s;
+        }
+
+main .split-section {
+    margin: 30px auto;
+    width: 75%;
+    height: 150px;
+    background-color: white;
+    padding: 40px 67px;
+    box-shadow: 1px 1px 5px 2px rgb(204, 204, 204);
+}
+
+    main .split-section .text-section {
+        overflow: hidden;
+        width: 80%;
+        height: 100%;
+        float: left;
+    }
+
+        main .split-section .text-section .title {
+            font-family: Nunito;
+            font-size: 40px;
+            color: black;
+        }
+
+        main .split-section .text-section .text {
+            font-family: Nunito;
+            font-style: italic;
+            font-size: 24px;
+            color: #383838;
+            margin-top: 26px;
+            margin-left: 67px;
+            max-width: 80%;
+        }
+
+            main .split-section .text-section .text::selection, main .split-section .text-section .title::selection {
+                background-color: rgb(255, 189, 7);
+            }
+
+    main .split-section .image-section {
+        width: 20%;
+        height: 100%;
+        line-height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+    }
+
+
+main .offers-section {
+    margin: 70px auto;
+    width: 75%;
+    min-height: 500px;
+    background-color: #282828;
+    padding: 67px;
+    padding-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+    main .offers-section .title {
+        font-size: 40px;
+        font-family: 'Roboto';
+        text-align: center;
+        color: #fff;
+    }
+
+.underline {
+    border: none;
+    color: unset;
+    background-color: white;
+    width: 500px;
+    height: 3px;
+}
+
+main .offers-section .article-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+}
+
+article {
+    width: 410px;
+    height: 600px;
+    margin-top: 50px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    article .article-img {
+        width: 100%;
+        height: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    article .article-wrapper {
+        padding: 30px;
+        height: 40%;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+        article .article-wrapper .article-title {
+            font-family: 'Roboto';
+            font-size: 23px;
+            color: black;
+            text-decoration: none;
+            width: 100%;
+            max-height: 70px;
+        }
+
+            article .article-wrapper .article-title:active {
+                text-decoration: underline;
+            }
+
+
+            article .article-wrapper .article-title:focus {
+                text-decoration: underline;
+            }
+
+        article .article-wrapper .article-date {
+            font-family: 'Roboto';
+            font-size: 16px;
+            color: #626262;
+            margin-top: 5px;
+            text-decoration: none;
+            width: 100%;
+            max-height: 70px;
+        }
+
+        article .article-wrapper .article-text {
+            font-family: 'Roboto';
+            font-size: 18px;
+            color: #000000;
+            margin-top: 10px;
+            text-decoration: none;
+            overflow: hidden !important;
+            width: 100%;
+            height: 120px;
+            letter-spacing: 0.3px;
+            line-height: 1.2em;
+        }
+
+            article .article-wrapper .article-text::before {
+                content: "\00a0";
+            }
+
+        article .article-wrapper .details {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        article .article-wrapper .article-price {
+            font-family: 'Roboto Condensed';
+            font-size: 22px;
+            float: left;
+            width: 60%;
+        }
+
+        article .article-wrapper .type-and-id {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        article .article-wrapper .article-type {
+            font-family: 'Roboto Condensed';
+            font-size: 18px;
+            float: right;
+        }
+
+        article .article-wrapper .article-id {
+            font-family: 'Roboto Condensed';
+            font-size: 18px;
+            justify-self: start;
+        }
+
+main .offers-section .btn {
+    font-family: 'Roboto';
+    display: block;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 34px;
+    height: 60px;
+    line-height: 55px;
+    border-radius: 0px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border: none;
+    width: 300px;
+    align-self: center;
+    margin-top: 100px;
+}
+
+    main .offers-section .btn:hover {
+        transition-duration: 0.15s;
+        color: white;
+        background-color: black;
+    }
+
+.footer__wrapper {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/skyscraper.jpg') 0px;
+    filter: grayscale(100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px 50px;
+    overflow: hidden;
+}
+
+    .footer__wrapper .footer {
+        display: flex;
+        width: 100vh;
+    }
+
+        .footer__wrapper .footer .logo {
+            font-size: 40px;
+            font-family: 'Century Gothic';
+            line-height: 100px;
+        }
+
+            .footer__wrapper .footer .logo a {
+                color: white;
+                text-decoration: none;
+                width: 50%;
+            }
+
+        .footer__wrapper .footer .copyright {
+            color: rgb(218, 218, 218);
+            font-family: 'InriaSerif';
+            font-size: 20px;
+            line-height: 100px;
+            width: 90%;
+            text-align: center;
+            position: absolute;
+        }
+
+
+@media (max-width: 1100px) {
+    .header__wrapper .header .logo {
+        font-size: 35px;
+    }
+
+    .header__wrapper .header .navbar .item a {
+        font-size: 16px;
+        margin: 0;
+    }
+
+        .header__wrapper .header .navbar .item a::after {
+            content: ""
+        }
+
+    .banner__wrapper {
+        min-height: 600px;
+    }
+
+        .banner__wrapper .banner {
+            min-height: 600px;
+        }
+
+        .banner__wrapper .main-title {
+            font-size: 45px;
+        }
+
+        .banner__wrapper .sub-title {
+            font-size: 16px;
+        }
+
+    main .split-section {
+        padding: 20px;
+        width: 90%;
+        max-height: 2000px;
+    }
+
+        main .split-section .text-section {
+            overflow: visible;
+            max-height: 2000px;
+        }
+
+            main .split-section .text-section .title {
+                font-size: 35px;
+            }
+
+            main .split-section .text-section .text {
+                font-size: 120%;
+            }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+        main .offers-section {
+            width: 80%;
+        }
+
+            main .offers-section .title {
+                font-size: 40px;
+            }
+
+    article {
+        width: 90%;
+        min-height: 700px;
+    }
+
+    main .offers-section .btn {
+        width: 50%;
+        height: 20%;
+        font-size: 120%;
+    }
+
+    .footer__wrapper {
+        padding: 0px 10px;
+        margin: 0px;
+    }
+
+        .footer__wrapper .footer .logo {
+            display: none;
+        }
+
+        .footer__wrapper .footer .copyright {
+            font-size: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+}

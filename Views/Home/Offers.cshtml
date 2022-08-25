@@ -1,0 +1,105 @@
+﻿@using Whitely.Domain.Models
+@model List<RealProperty>
+
+@{
+    Layout = null;
+
+    double TotalPages = ViewBag.TotalPages;
+    int id = ViewBag.Id;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/style/style.css">
+    <link rel="stylesheet" href="~/style/offers-style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7 user-scalable=no">
+    <link rel="icon" href="~/img/logo.png">
+    <title>Whitely - All offers</title>
+</head>
+<body>
+    <header class="header__wrapper">
+        <div class="header">
+            <span class="logo"><a href="/">Whitely</a></span>
+            <nav class="navbar">
+                <div class="item"><a href="/">Home</a></div>
+                <div class="item"><a href="#">Privacy</a></div>
+                <div class="item"><a href="#">About Us</a></div>
+                <div class="item"><a asp-action="Offers">Search</a></div>
+            </nav>
+        </div>
+    </header>
+    <div class="banner__wrapper">
+        <div class="banner">
+            <div class="main-title">
+                All offers
+            </div>
+            <div class="sub-title">
+                Whitely.com will help you to choose  perfect real estate. We can offer large warehouses,
+                beautiful offices and more!..
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="offers-section">
+            <form asp-action="Find" class="search">
+                <div class="search-title">Search</div>
+                <div class="input-section">
+                    <input class="input" type="text" name="searchString" placeholder="Write your request...">
+                    <input class="search-btn" type="submit" value="🔎">
+                </div>
+            </form>
+            <hr class="underline">
+            <div class="article-container">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <article>
+                        <a class="article-img" style="background-image: url('/img/@(Model[i].Id).jpg');" href="/Home/Offer/@Model[i].Id"></a>
+                        <div class="article-wrapper">
+                            <a href="/Home/Offer/@Model[i].Id" class="article-title">@Model[i].Title</a>
+                            <div class="article-date">Date: @Model[i].DateAdded</div>
+                            <div class="article-text">@(Model[i].Text)...</div>
+                            <div class="details">
+                                <div class="article-price">
+                                    Rent: @Model[i].RentPrice USD / m² <br>
+                                    Buy: @Model[i].BuyPrice USD / m²
+                                </div>
+                                <div class="type-and-id">
+                                    <div class="article-type">Type: @Model[i].Type</div>
+                                    <div class="article-id">ID: #@Model[i].Id</div>
+                                    <div class="article-type">Area: @Model[i].Area m²</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                }
+            </div>
+
+            <div class="page-buttons">
+                @for (int i = 1; i <= TotalPages; ++i)
+                {
+                    if (i == id)
+                    {
+                        <a href="/Home/Offers/@i" class="btn page-btn active">@i</a>
+                    }
+                    else
+                    {
+                        <a href="/Home/Offers/@i" class="btn page-btn">@i</a>
+                    }
+                }
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer__wrapper">
+        <div class="footer">
+            <div class="logo"><a href="/">Whitely</a></div>
+            <div class="copyright">Copyright Whitely © 2007-2022. All rights reserved</div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/c11c9940be.js" crossorigin="anonymous"></script>
+</body>
+</html>

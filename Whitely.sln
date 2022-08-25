@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32407.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Whitely", "Whitely.csproj", "{DB6E9DBA-0436-4041-A7BD-303BA707BEC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB6E9DBA-0436-4041-A7BD-303BA707BEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6E9DBA-0436-4041-A7BD-303BA707BEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6E9DBA-0436-4041-A7BD-303BA707BEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6E9DBA-0436-4041-A7BD-303BA707BEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7DC0B9F-FC9A-4E89-AF51-F7CBD04A53F0}
+	EndGlobalSection
+EndGlobal

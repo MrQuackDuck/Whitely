@@ -1,0 +1,126 @@
+::selection {
+    color: black;
+    background-color: rgb(0, 140, 255);
+}
+
+main .offers-section {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px 2px rgb(204, 204, 204);
+    column-gap: 0px !important;
+}
+
+article {
+    background-color: #EDEDED;
+    transform: scale(0.9);
+}
+
+article .article-wrapper {
+    background-color: #EDEDED;
+}
+
+main .offers-section .search {
+    min-height: 100px;
+    width: 95%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main .offers-section .search .search-title {
+    line-height: 100px;
+    font-family: 'Roboto';
+    font-size: 300%;
+}
+
+main .offers-section .search .input-section {
+    line-height: 100px;
+}
+
+main .offers-section .search .input-section .input {
+    height: 40px;
+    align-self: end;
+    font-size: 20px;
+    background-color: rgb(248, 248, 248);
+    font-family: 'Roboto';
+    font-style: italic;
+
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    
+}
+
+main .offers-section .search .input-section .input:focus {
+    border-bottom: 4px solid rgb(0, 0, 0);
+    font-style: normal;
+}
+
+main .offers-section .search .input-section .search-btn {
+    background-color: unset;
+    border: unset;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.underline {
+    width: 85%;
+    color: unset;
+    border: none;
+    background-color: rgb(197, 197, 197);
+    height: 2px;
+}
+
+main .offers-section .page-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+main .offers-section .page-buttons .page-btn {
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    color: white;
+    line-height: 45px;
+    font-size: 24px;
+}
+
+main .offers-section .page-buttons .active {
+    background-color: rgb(88, 88, 88);
+    color: white;
+}
+
+main .offers-section .page-buttons .page-btn:hover {
+    background-color: rgb(212, 212, 212);
+    color: black;
+}
+
+@media (max-width: 1100px) {
+    main .offers-section .search {
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main .offers-section .search {
+    }
+
+    main .offers-section .search .search-title {
+        font-size: 24px !important;
+        line-height: unset;
+    }
+
+    main .offers-section .search .input-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    main .offers-section .search .input-section .input {
+        width: 80%;
+    }
+
+
+}
