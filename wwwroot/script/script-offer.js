@@ -9,7 +9,3 @@ let scale = () => {
 let displayOff = () => {
     scaledImageBackground.classList.remove("active");
 }
-
-document.getElementsByClassName("image-scaled").onclick = () => {
-    alert(1)
-}
